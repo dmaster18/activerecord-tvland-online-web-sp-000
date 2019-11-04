@@ -10,7 +10,7 @@ class Actor < ActiveRecord::Base
     characters = Character.where(actor_id: self.id)
     roles = []
     characters.each {|character|
-      roles << "#{character.name} - #{Show.find(character.show_id)}"
+      roles << "#{character.name} - #{Show.find(character.show_id).name}"
     }
     roles
   end
