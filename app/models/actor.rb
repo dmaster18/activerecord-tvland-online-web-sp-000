@@ -10,6 +10,7 @@ class Actor < ActiveRecord::Base
     characters = Character.find_by(actor_id: self.id)
     characters.map {do |character|
     "#{character.name} - #{Show.find(character.show_id)}"
+    }
   end
   
 end
