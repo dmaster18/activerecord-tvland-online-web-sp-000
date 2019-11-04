@@ -12,6 +12,7 @@ class Actor < ActiveRecord::Base
     characters.each {|character|
       roles << "#{character.name} - #{Show.find(character.show_id)}"
     }
+    roles
   end
   
 end
